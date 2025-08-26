@@ -1,0 +1,25 @@
+/* Button styles are now handled by Tailwind CSS classes in the component */
+/* This file can be kept for any custom CSS if needed */
+
+.custom-button-animation {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.custom-button-animation:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.custom-button-animation:active {
+  transform: translateY(0);
+}
+
+/* Custom spinner animation */
+@keyframes custom-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.custom-spinner {
+  animation: custom-spin 1s linear infinite;
+}
