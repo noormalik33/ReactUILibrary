@@ -27,7 +27,7 @@ const Button = ({
   };
 
   const baseClasses = "inline-flex items-center justify-center font-semibold border-none rounded-lg cursor-pointer transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed";
-  
+
   const variantClasses = {
     primary: "bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:from-blue-600 hover:to-purple-700 focus:ring-blue-500 hover:shadow-lg transform hover:-translate-y-0.5",
     secondary: "bg-gradient-to-r from-gray-500 to-gray-600 text-white hover:from-gray-600 hover:to-gray-700 focus:ring-gray-500 hover:shadow-lg transform hover:-translate-y-0.5",
@@ -38,9 +38,9 @@ const Button = ({
   };
 
   const sizeClasses = {
-    small: "px-3 py-2 text-sm min-h-[36px]",
-    medium: "px-4 py-2 text-base min-h-[44px]",
-    large: "px-6 py-3 text-lg min-h-[52px]"
+    small: "px-2 sm:px-3 py-1 sm:py-2 text-sm min-h-[32px]",
+    medium: "px-3 sm:px-4 py-1.5 sm:py-2 text-base min-h-[40px]",
+    large: "px-4 sm:px-6 py-2 sm:py-3 text-lg min-h-[48px]"
   };
 
   const themeClasses = {
@@ -57,15 +57,15 @@ const Button = ({
         disabled={disabled || loading}
       >
         {loading && (
-          <FaSpinner className="animate-spin mr-2 flex-shrink-0" />
+          <FaSpinner className="animate-spin mr-1 sm:mr-2 flex-shrink-0 w-4 h-4 sm:w-5 sm:h-5" />
         )}
         {icon && !loading && (
-          <span className="mr-2 flex-shrink-0">{icon}</span>
+          <span className="mr-1 sm:mr-2 flex-shrink-0 w-4 h-4 sm:w-5 sm:h-5">{icon}</span>
         )}
         <span className="truncate">{children}</span>
       </button>
       {tooltip && (
-        <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 text-xs text-white bg-gray-900 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-50">
+        <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 sm:mb-2 px-2 sm:px-3 py-1 text-xs sm:text-sm text-white bg-gray-900 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-50">
           {tooltip}
         </div>
       )}

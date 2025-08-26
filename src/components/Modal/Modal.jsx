@@ -37,9 +37,9 @@ const Modal = ({
   if (!isOpen) return null;
 
   const sizeClasses = {
-    small: 'max-w-sm w-full mx-4',
-    medium: 'max-w-md sm:max-w-lg w-full mx-4',
-    large: 'max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-4xl w-full mx-4'
+    small: 'max-w-xs sm:max-w-sm w-full mx-2 sm:mx-4',
+    medium: 'max-w-sm sm:max-w-md md:max-w-lg w-full mx-2 sm:mx-4',
+    large: 'max-w-md sm:max-w-lg md:max-w-xl lg:max-w-3xl w-full mx-2 sm:mx-4'
   };
 
   const themeClasses = {
@@ -58,7 +58,7 @@ const Modal = ({
       />
       
       {/* Modal Container */}
-      <div className={`relative ${sizeClasses[size]} max-h-[90vh] rounded-xl overflow-hidden shadow-2xl animate-slide-up border ${themeClasses[theme]} ${className}`}>
+      <div className={`relative ${sizeClasses[size]} max-h-[85vh] sm:max-h-[90vh] rounded-xl overflow-hidden shadow-2xl animate-slide-up border ${themeClasses[theme]} ${className}`}>
         {/* Background Video */}
         {videoBg && (
           <video 
@@ -75,29 +75,29 @@ const Modal = ({
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-20 p-2 rounded-full bg-black bg-opacity-20 text-white hover:bg-opacity-40 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+          className="absolute top-2 sm:top-4 right-2 sm:right-4 z-20 p-1 sm:p-2 rounded-full bg-black bg-opacity-20 text-white hover:bg-opacity-40 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
           aria-label="Close modal"
         >
-          <FaTimes className="w-4 h-4" />
+          <FaTimes className="w-3 sm:w-4 h-3 sm:h-4" />
         </button>
 
         {/* Modal Content */}
-        <div className="relative z-10 flex flex-col max-h-[90vh]">
+        <div className="relative z-10 flex flex-col max-h-[85vh] sm:max-h-[90vh]">
           {/* Header */}
           {header && (
-            <div className="px-4 sm:px-6 py-4 border-b border-gray-200 dark:border-gray-600 flex-shrink-0 bg-opacity-90 backdrop-blur-sm">
+            <div className="px-2 sm:px-4 py-2 sm:py-4 border-b border-gray-200 dark:border-gray-600 flex-shrink-0 bg-opacity-90 backdrop-blur-sm">
               {header}
             </div>
           )}
           
           {/* Body */}
-          <div className="px-4 sm:px-6 py-4 overflow-y-auto flex-grow custom-scrollbar">
+          <div className="px-2 sm:px-4 py-2 sm:py-4 overflow-y-auto flex-grow custom-scrollbar">
             {children}
           </div>
           
           {/* Footer */}
           {footer && (
-            <div className="px-4 sm:px-6 py-4 border-t border-gray-200 dark:border-gray-600 flex-shrink-0 bg-opacity-90 backdrop-blur-sm">
+            <div className="px-2 sm:px-4 py-2 sm:py-4 border-t border-gray-200 dark:border-gray-600 flex-shrink-0 bg-opacity-90 backdrop-blur-sm">
               {footer}
             </div>
           )}

@@ -39,7 +39,7 @@ const Card = ({
     >
       {/* Media Section */}
       {(imageUrl || videoUrl) && (
-        <div className="relative h-48 sm:h-52 md:h-56 overflow-hidden">
+        <div className="relative h-32 sm:h-48 md:h-56 overflow-hidden">
           {imageUrl && (
             <div 
               className="w-full h-full bg-cover bg-center transition-transform duration-300 hover:scale-110"
@@ -64,19 +64,19 @@ const Card = ({
       )}
       
       {/* Content Section */}
-      <div className="p-4 sm:p-5 md:p-6">
-        <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3 line-clamp-2 leading-tight">
+      <div className="p-2 sm:p-4 md:p-6">
+        <h2 className="text-base sm:text-lg md:text-xl font-bold mb-1 sm:mb-2 line-clamp-2 leading-tight">
           {title}
         </h2>
-        <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4 line-clamp-3 leading-relaxed">
+        <p className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-300 mb-2 sm:mb-4 line-clamp-3 leading-relaxed">
           {content}
         </p>
       </div>
       
       {/* Actions Section */}
       {actions && (
-        <div className="px-4 sm:px-5 md:px-6 pb-4 sm:pb-5 md:pb-6">
-          <div className="flex flex-col sm:flex-row gap-2 justify-center">
+        <div className="px-2 sm:px-4 md:px-6 pb-2 sm:pb-4 md:pb-6">
+          <div className="flex flex-col sm:flex-row gap-1 sm:gap-2 justify-center">
             {actions}
           </div>
         </div>

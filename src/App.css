@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  padding: 40px;
+  padding: 1rem;
   font-family: 'Inter', sans-serif;
   transition: background 0.3s, color 0.3s;
   min-height: 100vh;
@@ -19,15 +19,16 @@
 
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Responsive grid with 350px min width */
-  gap: 20px; /* Spacing between cards */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
   justify-items: center;
+  padding: 0 1rem;
 }
 
 section {
-  margin: 40px 0;
-  padding: 20px;
-  border-radius: 12px;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  border-radius: 0.75rem;
   background: rgba(255, 255, 255, 0.9);
 }
 
@@ -41,4 +42,34 @@ section {
 
 h1, h2 {
   color: inherit;
+}
+
+@media (min-width: 640px) {
+  .App {
+    padding: 2rem;
+  }
+  .cards-container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 0 2rem;
+  }
+  section {
+    margin: 2rem 0;
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .App {
+    padding: 3rem;
+  }
+  .cards-container {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    padding: 0 3rem;
+  }
+  section {
+    margin: 2.5rem 0;
+    padding: 2rem;
+  }
 }
