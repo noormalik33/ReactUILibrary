@@ -36,6 +36,8 @@ const Modal = ({
 
   if (!isOpen) return null;
 
+  console.log('Current Theme in Modal:', theme); // Debug log to check theme
+
   const sizeClasses = {
     small: 'max-w-xs sm:max-w-sm w-full mx-2 sm:mx-4',
     medium: 'max-w-sm sm:max-w-md md:max-w-lg w-full mx-2 sm:mx-4',
@@ -46,6 +48,12 @@ const Modal = ({
     light: 'bg-white text-gray-800 border-gray-200',
     dark: 'bg-gray-800 text-white border-gray-700',
     mixed: 'bg-gradient-to-br from-purple-50 to-blue-50 text-gray-800 border-purple-200'
+  };
+
+  const modalCardTheme = {
+    light: 'bg-white border-gray-300 shadow-lg hover:shadow-xl',
+    dark: 'bg-gray-900 border-gray-600 shadow-xl hover:shadow-2xl',
+    mixed: 'bg-gradient-to-br from-purple-100 to-blue-100 border-purple-300 shadow-md hover:shadow-lg'
   };
 
   return (
@@ -85,19 +93,29 @@ const Modal = ({
         <div className="relative z-10 flex flex-col max-h-[85vh] sm:max-h-[90vh]">
           {/* Header */}
           {header && (
-            <div className="px-2 sm:px-4 py-2 sm:py-4 border-b border-gray-200 dark:border-gray-600 flex-shrink-0 bg-opacity-90 backdrop-blur-sm">
+            <div className="px-4 sm:px-6 py-3 sm:py-4 border-b border-gray-200 dark:border-gray-600 flex-shrink-0 bg-opacity-90 backdrop-blur-sm">
               {header}
             </div>
           )}
           
           {/* Body */}
-          <div className="px-2 sm:px-4 py-2 sm:py-4 overflow-y-auto flex-grow custom-scrollbar">
-            {children}
+          <div className="px-4 sm:px-6 py-4 sm:py-6 overflow-y-auto flex-grow custom-scrollbar">
+            <div className="space-y-4">
+              {React.Children.map(children, child =>
+                React.isValidElement(child) ? (
+                  <div className={`p-3 sm:p-4 rounded-lg ${modalCardTheme[theme]} transform transition-all duration-300 hover:-translate-y-1`}>
+                    {child}
+                  </div>
+                ) : (
+                  child
+                )
+              )}
+            </div>
           </div>
           
           {/* Footer */}
           {footer && (
-            <div className="px-2 sm:px-4 py-2 sm:py-4 border-t border-gray-200 dark:border-gray-600 flex-shrink-0 bg-opacity-90 backdrop-blur-sm">
+            <div className="px-4 sm:px-6 py-3 sm:py-4 border-t border-gray-200 dark:border-gray-600 flex-shrink-0 bg-opacity-90 backdrop-blur-sm">
               {footer}
             </div>
           )}

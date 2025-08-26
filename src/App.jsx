@@ -26,7 +26,7 @@ function AppContent() {
     setSelectedCard(cardTitle);
     if (cardTitle === "Nature Card") setIsModalOpen(true);
     else if (cardTitle === "City Card") setIsSecondModalOpen(true);
-    else if (cardTitle === "Mountain Card" || cardTitle === "Beach Card") setIsScrollableModalOpen(true);
+    else setIsScrollableModalOpen(true);
   };
 
   const toggleCardDetails = (cardTitle) => {
@@ -115,13 +115,36 @@ function AppContent() {
         <div className={`cards-container ${isGridLayout ? 'grid-layout' : 'list-layout'}`}>
           <style>
             {`
-              .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
-              .list-layout { display: flex; flex-direction: column; gap: 1rem; }
+              .grid-layout { 
+                display: grid; 
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+                gap: 1rem; 
+                padding: 0 1rem;
+              }
+              .list-layout { 
+                display: flex; 
+                flex-direction: column; 
+                gap: 1rem; 
+                padding: 0 1rem;
+              }
+              .card-image {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                border-radius: 8px;
+                display: block;
+              }
               @media (min-width: 640px) {
-                .grid-layout { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+                .grid-layout { 
+                  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+                  gap: 1.5rem; 
+                }
               }
               @media (min-width: 1024px) {
-                .grid-layout { grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
+                .grid-layout { 
+                  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+                  gap: 2rem; 
+                }
               }
             `}
           </style>
@@ -209,6 +232,147 @@ function AppContent() {
             }
             linkUrl="https://www.beachguide.com"
           />
+          <Card 
+            title="Desert Card" 
+            content={showDetails["Desert Card"] ? "Details: Vast dunes and unique desert flora." : "Explore the sandy expanses."}
+            image Regulatory Authority
+            imageUrl="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
+            videoUrl="https://www.sample-videos.com/video123/mp4/720/big_buck_bunny_720p_6mb.mp4"
+            actions={
+              <>
+                <Button variant="secondary" size="small" onClick={() => openModalForCard("Desert Card")} disabled={areCardsDisabled}><FaEye /> Show Details</Button>
+                <Button variant="outline" size="small" onClick={() => toggleCardDetails("Desert Card")} disabled={areCardsDisabled}><FaShareAlt /> Toggle Details</Button>
+                <Button variant="danger" size="small" onClick={() => alert("Liked Desert Card!")} disabled={areCardsDisabled}><FaHeart /> Like</Button>
+              </>
+            }
+            linkUrl="https://www.nps.gov/deserts"
+          />
+          <Card 
+            title="Forest Card" 
+            content={showDetails["Forest Card"] ? "Details: Dense woods and wildlife habitats." : "Immerse in lush greenery."}
+            imageUrl="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=80"
+            videoUrl="https://www.sample-videos.com/video123/mp4/720/big_buck_bunny_720p_7mb.mp4"
+            actions={
+              <>
+                <Button variant="primary" size="small" onClick={() => openModalForCard("Forest Card")} disabled={areCardsDisabled}><FaEye /> View Info</Button>
+                <Button variant="outline" size="small" onClick={() => toggleCardDetails("Forest Card")} disabled={areCardsDisabled}><FaShareAlt /> Toggle Details</Button>
+                <Button variant="danger" size="small" onClick={() => alert("Liked Forest Card!")} disabled={areCardsDisabled}><FaHeart /> Like</Button>
+              </>
+            }
+            linkUrl="https://www.worldwildlife.org/habitats/forests"
+          />
+          <Card 
+            title="Ocean Card" 
+            content={showDetails["Ocean Card"] ? "Details: Deep waters and marine life." : "Dive into ocean beauty."}
+            imageUrl="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80"
+            videoUrl="https://www.sample-videos.com/video123/mp4/720/big_buck_bunny_720p_8mb.mp4"
+            actions={
+              <>
+                <Button variant="secondary" size="small" onClick={() => openModalForCard("Ocean Card")} disabled={areCardsDisabled}><FaEye /> Show Details</Button>
+                <Button variant="outline" size="small" onClick={() => toggleCardDetails("Ocean Card")} disabled={areCardsDisabled}><FaShareAlt /> Toggle Details</Button>
+                <Button variant="danger" size="small" onClick={() => alert("Liked Ocean Card!")} disabled={areCardsDisabled}><FaHeart /> Like</Button>
+              </>
+            }
+            linkUrl="https://www.oceanconservancy.org"
+          />
+          <Card 
+            title="Urban Park Card" 
+            content={showDetails["Urban Park Card"] ? "Details: City oases with green spaces." : "Relax in urban parks."}
+            imageUrl="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80"
+            videoUrl="https://www.sample-videos.com/video123/mp4/720/big_buck_bunny_720p_9mb.mp4"
+            actions={
+              <>
+                <Button variant="primary" size="small" onClick={() => openModalForCard("Urban Park Card")} disabled={areCardsDisabled}><FaEye /> View Info</Button>
+                <Button variant="outline" size="small" onClick={() => toggleCardDetails("Urban Park Card")} disabled={areCardsDisabled}><FaShareAlt /> Toggle Details</Button>
+                <Button variant="danger" size="small" onClick={() => alert("Liked Urban Park Card!")} disabled={areCardsDisabled}><FaHeart /> Like</Button>
+              </>
+            }
+            linkUrl="https://www.tpl.org/our-work/parks"
+          />
+          <Card 
+            title="Sunset Card" 
+            content={showDetails["Sunset Card"] ? "Details: Vibrant skies at dusk." : "Enjoy stunning sunsets."}
+            imageUrl="https://images.unsplash.com/photo-1503803548695-c2a7b4a5b875?auto=format&fit=crop&w=800&q=80"
+            videoUrl="https://www.sample-videos.com/video123/mp4/720/big_buck_bunny_720p_10mb.mp4"
+            actions={
+              <>
+                <Button variant="secondary" size="small" onClick={() => openModalForCard("Sunset Card")} disabled={areCardsDisabled}><FaEye /> Show Details</Button>
+                <Button variant="outline" size="small" onClick={() => toggleCardDetails("Sunset Card")} disabled={areCardsDisabled}><FaShareAlt /> Toggle Details</Button>
+                <Button variant="danger" size="small" onClick={() => alert("Liked Sunset Card!")} disabled={areCardsDisabled}><FaHeart /> Like</Button>
+              </>
+            }
+            linkUrl="https://www.nationalgeographic.com/travel/article/sunset"
+          />
+          <Card 
+            title="Wildlife Card" 
+            content={showDetails["Wildlife Card"] ? "Details: Diverse animals in their habitats." : "Discover wildlife wonders."}
+            imageUrl="https://images.unsplash.com/photo-1474511320723-9a56873867b5?auto=format&fit=crop&w=800&q=80"
+            videoUrl="https://www.sample-videos.com/video123/mp4/720/big_buck_bunny_720p_11mb.mp4"
+            actions={
+              <>
+                <Button variant="primary" size="small" onClick={() => openModalForCard("Wildlife Card")} disabled={areCardsDisabled}><FaEye /> View Info</Button>
+                <Button variant="outline" size="small" onClick={() => toggleCardDetails("Wildlife Card")} disabled={areCardsDisabled}><FaShareAlt /> Toggle Details</Button>
+                <Button variant="danger" size="small" onClick={() => alert("Liked Wildlife Card!")} disabled={areCardsDisabled}><FaHeart /> Like</Button>
+              </>
+            }
+            linkUrl="https://www.nwf.org"
+          />
+          <Card 
+            title="Space Card" 
+            content={showDetails["Space Card"] ? "Details: Stars, planets, and galaxies." : "Explore the cosmos."}
+            imageUrl="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80"
+            videoUrl="https://www.sample-videos.com/video123/mp4/720/big_buck_bunny_720p_12mb.mp4"
+            actions={
+              <>
+                <Button variant="secondary" size="small" onClick={() => openModalForCard("Space Card")} disabled={areCardsDisabled}><FaEye /> Show Details</Button>
+                <Button variant="outline" size="small" onClick={() => toggleCardDetails("Space Card")} disabled={areCardsDisabled}><FaShareAlt /> Toggle Details</Button>
+                <Button variant="danger" size="small" onClick={() => alert("Liked Space Card!")} disabled={areCardsDisabled}><FaHeart /> Like</Button>
+              </>
+            }
+            linkUrl="https://www.nasa.gov"
+          />
+          <Card 
+            title="Waterfall Card" 
+            content={showDetails["Waterfall Card"] ? "Details: Cascading waters in serene settings." : "Marvel at majestic waterfalls."}
+            imageUrl="https://images.unsplash.com/photo-1516796181074-bf453fbfa3e6?auto=format&fit=crop&w=800&q=80"
+            videoUrl="https://www.sample-videos.com/video123/mp4/720/big_buck_bunny_720p_13mb.mp4"
+            actions={
+              <>
+                <Button variant="primary" size="small" onClick={() => openModalForCard("Waterfall Card")} disabled={areCardsDisabled}><FaEye /> View Info</Button>
+                <Button variant="outline" size="small" onClick={() => toggleCardDetails("Waterfall Card")} disabled={areCardsDisabled}><FaShareAlt /> Toggle Details</Button>
+                <Button variant="danger" size="small" onClick={() => alert("Liked Waterfall Card!")} disabled={areCardsDisabled}><FaHeart /> Like</Button>
+              </>
+            }
+            linkUrl="https://www.worldwaterfalldatabase.com"
+          />
+          <Card 
+            title="Countryside Card" 
+            content={showDetails["Countryside Card"] ? "Details: Rolling hills and peaceful fields." : "Relax in the countryside."}
+            imageUrl="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=800&q=80"
+            videoUrl="https://www.sample-videos.com/video123/mp4/720/big_buck_bunny_720p_14mb.mp4"
+            actions={
+              <>
+                <Button variant="secondary" size="small" onClick={() => openModalForCard("Countryside Card")} disabled={areCardsDisabled}><FaEye /> Show Details</Button>
+                <Button variant="outline" size="small" onClick={() => toggleCardDetails("Countryside Card")} disabled={areCardsDisabled}><FaShareAlt /> Toggle Details</Button>
+                <Button variant="danger" size="small" onClick={() => alert("Liked Countryside Card!")} disabled={areCardsDisabled}><FaHeart /> Like</Button>
+              </>
+            }
+            linkUrl="https://www.ruraltourism.com"
+          />
+          <Card 
+            title="Historic Card" 
+            content={showDetails["Historic Card"] ? "Details: Ancient ruins and cultural heritage." : "Discover historic landmarks."}
+            imageUrl="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=800&q=80"
+            videoUrl="https://www.sample-videos.com/video123/mp4/720/big_buck_bunny_720p_15mb.mp4"
+            actions={
+              <>
+                <Button variant="primary" size="small" onClick={() => openModalForCard("Historic Card")} disabled={areCardsDisabled}><FaEye /> View Info</Button>
+                <Button variant="outline" size="small" onClick={() => toggleCardDetails("Historic Card")} disabled={areCardsDisabled}><FaShareAlt /> Toggle Details</Button>
+                <Button variant="danger" size="small" onClick={() => alert("Liked Historic Card!")} disabled={areCardsDisabled}><FaHeart /> Like</Button>
+              </>
+            }
+            linkUrl="https://www.unesco.org"
+          />
         </div>
       </section>
       
@@ -242,12 +406,30 @@ function AppContent() {
             onClose={() => setIsSecondModalOpen(false)}
             videoBg="https://www.sample-videos.com/video123/mp4/720/big_buck_bunny_720p_2mb.mp4"
             header={<h2>{selectedCard === "Preview" ? "Preview Modal" : "Another Modal - Pakistani Cookbook"}</h2>}
-            footer={<p>{selectedCard === "Preview" ? "This is a preview! Close to exit." : "Explore more Pakistani flavors! Close to exit."}</p>}
+            footer={<p>{selectedCard === "Preview" ? "This is a sample preview! Close to exit." : "Explore more Pakistani flavors! Close to exit."}</p>}
             size="large"
           >
             <div style={{ padding: '20px' }}>
               {selectedCard === "Preview" ? (
-                <p>This is a sample modal preview. Use buttons to interact with the demo!</p>
+                <Card 
+                  title="Sample Landscape Card"
+                  content="A breathtaking view of a serene valley, perfect for nature lovers."
+                  imageUrl="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=800&q=80"
+                  actions={
+                    <>
+                      <Button variant="primary" size="small" onClick={() => alert("View full gallery!")}>
+                        <FaEye /> View Gallery
+                      </Button>
+                      <Button variant="outline" size="small" onClick={() => alert("Share this view!")}>
+                        <FaShareAlt /> Share
+                      </Button>
+                      <Button variant="danger" size="small" onClick={() => alert("Liked the view!")}>
+                        <FaHeart /> Like
+                      </Button>
+                    </>
+                  }
+                  linkUrl="https://www.unsplash.com"
+                />
               ) : (
                 <>
                   <h3>Chicken Karahi Recipe</h3>
@@ -287,82 +469,78 @@ function AppContent() {
       </section>
       
       <footer
-        className={`w-full p-1 sm:p-2 md:p-4 ${
+        className={`w-full p-2 sm:p-4 ${
           theme === 'light' ? 'bg-gray-100 text-gray-800' : theme === 'dark' ? 'bg-gray-800 text-gray-100' : 'bg-mixed-accent text-text-mixed'
-        } text-xs sm:text-sm flex flex-col sm:flex-row flex-wrap justify-center items-center gap-0.5 sm:gap-1 md:gap-2 font-inter fixed bottom-0 left-0 z-40 whitespace-nowrap overflow-hidden`}
+        } text-xs sm:text-sm flex flex-col items-center gap-2 font-inter fixed bottom-0 left-0 z-40 whitespace-nowrap overflow-x-auto`}
       >
-        <span>Developed by </span>
-        <a
-          href="https://noor-malik-portfolio.netlify.app/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:text-mixed-accent transition-colors flex items-center gap-0.5 sm:gap-1"
-        >
-          <FaBriefcase className="inline-block w-3 h-3 sm:w-4 sm:h-4" />{' '} Noor Malik
-        </a>
-        <span className="hidden sm:inline"> | </span>
-        <a
-          href="mailto:noormalik56500@gmail.com"
-          onClick={(e) => {
-            e.preventDefault();
-            if (/Mobi|Android/i.test(navigator.userAgent)) {
-              window.location.href = 'mailto:noormalik56500@gmail.com';
-            } else {
-              window.open(
-                'https://mail.google.com/mail/?view=cm&fs=1&to=noormalik56500@gmail.com',
-                '_blank'
-              );
-            }
-          }}
-          className="hover:text-mixed-accent transition-colors flex items-center gap-0.5 sm:gap-1"
-        >
-          <FaEnvelope className="inline-block w-3 h-3 sm:w-4 sm:h-4" />{' '} Email
-        </a>
-        <span className="hidden sm:inline"> | </span>
-        <a
-          href="https://www.linkedin.com/in/noormalik56500/"
-          className="hover:text-mixed-accent transition-colors flex items-center gap-0.5 sm:gap-1"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaLinkedin className="inline-block w-3 h-3 sm:w-4 sm:h-4" />{' '} LinkedIn
-        </a>
-        <span className="hidden sm:inline"> | </span>
-        <a
-          href="https://github.com/noormalik33"
-          className="hover:text-mixed-accent transition-colors flex items-center gap-0.5 sm:gap-1"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaGithub className="inline-block w-3 h-3 sm:w-4 sm:h-4" />{' '} GitHub
-        </a>
-        <span className="hidden sm:inline"> | </span>
-        <a
-          href="https://www.youtube.com/@CoreITTech1"
-          className="hover:text-mixed-accent transition-colors flex items-center gap-0.5 sm:gap-1"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaYoutube className="inline-block w-3 h-3 sm:w-4 sm:h-4" />{' '} YouTube
-        </a>
-        <span className="hidden sm:inline"> | </span>
-        <a
-          href="https://www.instagram.com/coreit.tech"
-          className="hover:text-mixed-accent transition-colors flex items-center gap-0.5 sm:gap-1"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaInstagram className="inline-block w-3 h-3 sm:w-4 sm:h-4" />{' '} Instagram
-        </a>
-        <span className="hidden sm:inline"> | </span>
-        <a
-          href="https://www.facebook.com/share/1AmgLDUnc9/"
-          className="hover:text-mixed-accent transition-colors flex items-center gap-0.5 sm:gap-1"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaFacebook className="inline-block w-3 h-3 sm:w-4 sm:h-4" />{' '} Facebook
-        </a>
+        <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-4">
+          <span>Developed by</span>
+          <a
+            href="https://noor-malik-portfolio.netlify.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-mixed-accent transition-colors flex items-center gap-1"
+          >
+            <FaBriefcase className="inline-block w-4 h-4" /> Noor Malik
+          </a>
+          <a
+            href="mailto:noormalik56500@gmail.com"
+            onClick={(e) => {
+              e.preventDefault();
+              if (/Mobi|Android/i.test(navigator.userAgent)) {
+                window.location.href = 'mailto:noormalik56500@gmail.com';
+              } else {
+                window.open(
+                  'https://mail.google.com/mail/?view=cm&fs=1&to=noormalik56500@gmail.com',
+                  '_blank'
+                );
+              }
+            }}
+            className="hover:text-mixed-accent transition-colors flex items-center gap-1"
+          >
+            <FaEnvelope className="inline377-block w-4 h-4" /> Email
+          </a>
+          <a
+            href="https://www.linkedin.com/in/noormalik56500/"
+            className="hover:text-mixed-accent transition-colors flex items-center gap-1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaLinkedin className="inline-block w-4 h-4" /> LinkedIn
+          </a>
+          <a
+            href="https://github.com/noormalik33"
+            className="hover:text-mixed-accent transition-colors flex items-center gap-1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaGithub className="inline-block w-4 h-4" /> GitHub
+          </a>
+          <a
+            href="https://www.youtube.com/@CoreITTech1"
+            className="hover:text-mixed-accent transition-colors flex items-center gap-1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaYoutube className="inline-block w-4 h-4" /> YouTube
+          </a>
+          <a
+            href="https://www.instagram.com/coreit.tech"
+            className="hover:text-mixed-accent transition-colors flex items-center gap-1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaInstagram className="inline-block w-4 h-4" /> Instagram
+          </a>
+          <a
+            href="https://www.facebook.com/share/1AmgLDUnc9/"
+            className="hover:text-mixed-accent transition-colors flex items-center gap-1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaFacebook className="inline-block w-4 h-4" /> Facebook
+          </a>
+        </div>
       </footer>
     </div>
   );
