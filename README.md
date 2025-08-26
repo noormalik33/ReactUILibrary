@@ -69,12 +69,14 @@ IT Student
 📧 Email: noormalik56500@gmail.com  
 🔗 [LinkedIn](https://www.linkedin.com/in/noormalik56500/)
 
-## Social
+Social 📱
 
-Email:coreittech1@gmail.com
-Youtube:https://www.youtube.com/@CoreITTech1
-Instagram:https://www.instagram.com/coreit.tech
-FaceBook:https://www.facebook.com/share/1AmgLDUnc9/
+📧 Email: mailto:coreittech1@gmail.com
+📹 YouTube: https://www.youtube.com/@CoreITTech1
+📸 Instagram: https://www.instagram.com/coreit.tech
+📘 Facebook: https://www.facebook.com/share/1AmgLDUnc9/
+
+
 
 💡 If you like this project, don’t forget to star ⭐ it on GitHub!
 
