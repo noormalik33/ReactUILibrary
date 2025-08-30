@@ -235,7 +235,6 @@ function AppContent() {
           <Card 
             title="Desert Card" 
             content={showDetails["Desert Card"] ? "Details: Vast dunes and unique desert flora." : "Explore the sandy expanses."}
-            image Regulatory Authority
             imageUrl="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
             videoUrl="https://www.sample-videos.com/video123/mp4/720/big_buck_bunny_720p_6mb.mp4"
             actions={
@@ -394,7 +393,7 @@ function AppContent() {
               <Button variant="outline" size="small" onClick={() => alert(recipeSteps["Mutton Pulao"])}><FaEye /> View Steps</Button>
               <Button variant="secondary" size="small" onClick={() => setIsModalOpen(false)}><FaTimes /> Close</Button>
               <h3>Lahsun ki Chutney Recipe</h3>
-              <p>A spicy garlic chutney with a tangy kick.</p>
+              <p>A spicy garlic chutney with a tang kick.</p>
               <Button variant="outline" size="small" onClick={() => alert(recipeSteps["Lahsun ki Chutney"])}><FaEye /> View Steps</Button>
               <Button variant="secondary" size="small" onClick={() => setIsModalOpen(false)}><FaTimes /> Close</Button>
             </div>
@@ -469,19 +468,19 @@ function AppContent() {
       </section>
       
       <footer
-        className={`w-full p-2 sm:p-4 ${
+        className={`w-full p-3 sm:p-4 md:p-5 ${
           theme === 'light' ? 'bg-gray-100 text-gray-800' : theme === 'dark' ? 'bg-gray-800 text-gray-100' : 'bg-mixed-accent text-text-mixed'
-        } text-xs sm:text-sm flex flex-col items-center gap-2 font-inter fixed bottom-0 left-0 z-40 whitespace-nowrap overflow-x-auto`}
+        } text-xs xs:text-sm sm:text-base font-inter fixed bottom-0 left-0 z-40 flex flex-col items-center gap-2 sm:gap-3 md:gap-4`}
       >
-        <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-4">
-          <span>Developed by</span>
+        <div className="flex flex-wrap justify-center items-center gap-2 xs:gap-3 sm:gap-4 md:gap-6 max-w-5xl mx-auto">
+          <span className="text-center">Developed by</span>
           <a
             href="https://noor-malik-portfolio.netlify.app/"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-mixed-accent transition-colors flex items-center gap-1"
+            className="hover:text-mixed-accent transition-colors flex items-center gap-1 text-center whitespace-nowrap"
           >
-            <FaBriefcase className="inline-block w-4 h-4" /> Noor Malik
+            <FaBriefcase className="inline-block w-3 h-3 xs:w-4 xs:h-4 sm:w-5 sm:h-5" /> Noor Malik
           </a>
           <a
             href="mailto:noormalik56500@gmail.com"
@@ -496,49 +495,49 @@ function AppContent() {
                 );
               }
             }}
-            className="hover:text-mixed-accent transition-colors flex items-center gap-1"
+            className="hover:text-mixed-accent transition-colors flex items-center gap-1 text-center whitespace-nowrap"
           >
-            <FaEnvelope className="inline377-block w-4 h-4" /> Email
+            <FaEnvelope className="inline-block w-3 h-3 xs:w-4 xs:h-4 sm:w-5 sm:h-5" /> Email
           </a>
           <a
             href="https://www.linkedin.com/in/noormalik56500/"
-            className="hover:text-mixed-accent transition-colors flex items-center gap-1"
+            className="hover:text-mixed-accent transition-colors flex items-center gap-1 text-center whitespace-nowrap"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaLinkedin className="inline-block w-4 h-4" /> LinkedIn
+            <FaLinkedin className="inline-block w-3 h-3 xs:w-4 xs:h-4 sm:w-5 sm:h-5" /> LinkedIn
           </a>
           <a
             href="https://github.com/noormalik33"
-            className="hover:text-mixed-accent transition-colors flex items-center gap-1"
+            className="hover:text-mixed-accent transition-colors flex items-center gap-1 text-center whitespace-nowrap"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaGithub className="inline-block w-4 h-4" /> GitHub
+            <FaGithub className="inline-block w-3 h-3 xs:w-4 xs:h-4 sm:w-5 sm:h-5" /> GitHub
           </a>
           <a
             href="https://www.youtube.com/@CoreITTech1"
-            className="hover:text-mixed-accent transition-colors flex items-center gap-1"
+            className="hover:text-mixed-accent transition-colors flex items-center gap-1 text-center whitespace-nowrap"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaYoutube className="inline-block w-4 h-4" /> YouTube
+            <FaYoutube className="inline-block w-3 h-3 xs:w-4 xs:h-4 sm:w-5 sm:h-5" /> YouTube
           </a>
           <a
             href="https://www.instagram.com/coreit.tech"
-            className="hover:text-mixed-accent transition-colors flex items-center gap-1"
+            className="hover:text-mixed-accent transition-colors flex items-center gap-1 text-center whitespace-nowrap"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaInstagram className="inline-block w-4 h-4" /> Instagram
+            <FaInstagram className="inline-block w-3 h-3 xs:w-4 xs:h-4 sm:w-5 sm:h-5" /> Instagram
           </a>
           <a
             href="https://www.facebook.com/share/1AmgLDUnc9/"
-            className="hover:text-mixed-accent transition-colors flex items-center gap-1"
+            className="hover:text-mixed-accent transition-colors flex items-center gap-1 text-center whitespace-nowrap"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaFacebook className="inline-block w-4 h-4" /> Facebook
+            <FaFacebook className="inline-block w-3 h-3 xs:w-4 xs:h-4 sm:w-5 sm:h-5" /> Facebook
           </a>
         </div>
       </footer>
